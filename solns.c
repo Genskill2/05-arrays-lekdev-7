@@ -1,11 +1,10 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
-int max(int arr[],int n)
+int max(int arr[100],int n)
 {
- int i;
  int max;
  max=arr[0];
- for(i=1;i<n;i++)
+ for(int i=1;i<n;i++)
  {
   if(arr[i]>max)
    max=arr[i];
@@ -14,12 +13,11 @@ int max(int arr[],int n)
 }
 
 
-int min(int arr[],int n)
+int min(int arr[100],int n)
 {
- int i;
  int min;
  min=arr[0];
- for(i=1;i<n;i++)
+ for(int i=1;i<n;i++)
  {
   if(arr[i]<min)
    min=arr[i];
@@ -28,19 +26,19 @@ int min(int arr[],int n)
 }
 
 
-float average(int arr[],int n)
+float average(int arr[100],int n)
 {
  int sum=0;
- int i;
- for(i=0;i<n;i++)
+ for(int i=0;i<n;i++)
   sum=sum+arr[i];
- return (float)sum/n;
+ return (float)(sum/n;
 }
 
-int mode(int a[],int n) {
+int mode(int a[100],int n) 
+ {
    int maxValue = 0, maxCount = 0, i, j;
-
-   for (i = 0; i < n; ++i) {
+  
+  for (i = 0; i < n; ++i) {
       int count = 0;
       
       for (j = 0; j < n; ++j) {
@@ -57,7 +55,7 @@ int mode(int a[],int n) {
    return maxValue;
 }
 
-int factors(int num,int arr[])
+int factors(int num,int arr[100])
 {
  int i=0;
  while(num%2==0)
@@ -82,3 +80,4 @@ if(num > 2) {
    } 
 
 return
+ }

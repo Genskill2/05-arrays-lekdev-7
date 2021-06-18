@@ -55,29 +55,27 @@ int mode(int a[100],int n)
    return maxValue;
 }
 
-int factors(int num,int arr[100])
+int factors(int n, int a[])
 {
- int i=0;
- while(num%2==0)
- {
-  arr[i]=2;
-  ++i;
-  num=num/2;
- }
- int j;
- for(j=3;j<=sqrt(num);j=j+2)
- {
-  while(num%j==0)
+  int count=0;
+  for(int i=0;i<100;++i)
   {
-   arr[i]=j;
-   ++i;
-   num=num/j;
-  } 
- }
-if(num > 2) {
-     arr[i]=num;
-     ++i;
-   } 
+    if(n>0 && n!=1)
+    {
+      for(int j=2;j<100;j++)
+      {
+        if(n%j==0)
+        {
+          a[i]=j;
+          count++;
+          n=n/j;
+          break;
+        }
 
-return
- }
+      }
+    }
+    else
+      break;
+  }
+    return count;
+}

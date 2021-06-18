@@ -1,60 +1,53 @@
-/* Enter your solutions in this file */
 #include <stdio.h>
-int max(int arr[100],int n)
+int max(int a[100],int n)
 {
- int max;
- max=arr[0];
- for(int i=1;i<n;i++)
- {
-  if(arr[i]>max)
-   max=arr[i];
- }
- return max;
+  int m=a[0];
+  for(int i=1;i<n;++i)
+  {
+    if(a[i]>m)
+      m=a[i];
+  }
+  return m;
 }
-
-
-int min(int arr[100],int n)
+int min(int a[100],int n)
 {
- int min;
- min=arr[0];
- for(int i=1;i<n;i++)
- {
-  if(arr[i]<min)
-   min=arr[i];
- }
- return min;
+  int m=a[0];
+  for(int i=1;i<n;++i)
+  {
+    if(a[i]<m)
+      m=a[i];
+  }
+  return m;
 }
-
-
-float average(int arr[100],int n)
+float average(int a[100], int n)
 {
- int sum=0;
- for(int i=0;i<n;i++)
-  sum=sum+arr[i];
- return (float)(sum/n;
+  int s=0;
+  for(int i=0;i<n;++i)
+    s+=a[i];
+  return (float)(s/n);
 }
-
-int mode(int a[100],int n) 
- {
-   int maxValue = 0, maxCount = 0, i, j;
-  
-  for (i = 0; i < n; ++i) {
-      int count = 0;
-      
-      for (j = 0; j < n; ++j) {
-         if (a[j] == a[i])
-         ++count;
-      }
-      
-      if (count > maxCount) {
-         maxCount = count;
-         maxValue = a[i];
-      }
-   }
-
-   return maxValue;
+int mode(int a[100], int n)
+{
+  int mode=a[0];
+  int count=0;
+  int max=0;
+  if(n==1)
+    return a[0];
+  for(int i=0;i<n;++i)
+  {
+    for(int j=i+1;j<n;++j)
+    {
+      if(a[i]==a[j])
+        count++;
+    }
+    if(count>max)
+    {
+     max=count;
+     mode=a[i];
+    }
+    }
+return mode;
 }
-
 int factors(int n, int a[])
 {
   int count=0;
